@@ -16,7 +16,7 @@ Output of the function not completely depends on the input paramaters but also w
 
 Code smells are not bugs or errors. Instead, these are absolute violations of the fundamentals of developing software that decrease the quality of code.
 
-# Data clsss smell:
+# Data class smell:
 
 Data classes can be considered a code smell, when they are over abused and logic concerned to those classes are treated in separate classes when could be done in the same class. A data class is basically a class the contain only getters and setters (sometimes).
 
