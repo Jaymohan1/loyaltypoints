@@ -1,17 +1,9 @@
 package com.java.loyaltypoints;
 
 public class PrivilegeService {
-    private PointsCalculator pointsCalculator = new PointsCalculator();
+    private final PointsCalculator pointsCalculator = new PointsCalculator();
 
     public int loyaltyPoints(Customer customer, float amountSpent) {
-        Tier tier = customer.getTier();
-        int newPoints = pointsCalculator.calculateTotalPoints(tier, amountSpent);
-        int oldPoints = customer.getPoints();
-        customer.setPoints(oldPoints + newPoints);
-        return customer.getPoints();
+        return customer.loyaltyPoints(amountSpent, pointsCalculator);
     }
-
-    // Other public methods
-    // Tier updateTier(Customer customer) {
-    // ...
 }

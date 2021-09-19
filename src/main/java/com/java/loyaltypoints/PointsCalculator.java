@@ -4,6 +4,10 @@ public class PointsCalculator {
     private static float AMOUNT_PER_POINT = 100.00f;
 
     public int calculateTotalPoints(Tier tier, float amountSpent) {
+        return calculateLoyaltyPoints(tier, amountSpent);
+    }
+
+    private int calculateLoyaltyPoints(Tier tier, float amountSpent) {
         final float earnedPoints = earnedPoints(amountSpent);
         return (int)(earnedPoints + bonus(tier, earnedPoints));
     }

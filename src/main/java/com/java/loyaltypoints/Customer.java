@@ -4,16 +4,14 @@ public class Customer {
     private Tier tier;
     private int points;
 
-    public Tier getTier() {
-        return tier;
-    }
-    public void setTier(Tier tier) {
+    public Customer(Tier tier, int points) {
         this.tier = tier;
-    }
-    public int getPoints() {
-        return points;
-    }
-    public void setPoints(int points) {
         this.points = points;
+    }
+
+    public int loyaltyPoints(float amountSpent, PointsCalculator pointsCalculator) {
+        int newPoints = pointsCalculator.calculateTotalPoints(tier, amountSpent);
+        points = points + newPoints;
+        return points;
     }
 }
