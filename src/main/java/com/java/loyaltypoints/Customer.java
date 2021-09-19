@@ -9,8 +9,8 @@ public class Customer {
         this.points = points;
     }
 
-    public int loyaltyPoints(float amountSpent, PointsCalculator pointsCalculator) {
-        int newPoints = pointsCalculator.calculateTotalPoints(tier, amountSpent);
+    public int loyaltyPoints(float amountSpent) {
+        int newPoints = tier.calculateTotalPoints(amountSpent);
         points = points + newPoints;
         return points;
     }
